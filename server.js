@@ -73,8 +73,10 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
 });
 
 // Show main page no matter what
-app.use('*', (req, res) => {
-  res.render('index.html');
+app.use('/', (req, res) => {
+  res.sendFile('public/views/index.html', {
+    root: __dirname
+  });
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));
