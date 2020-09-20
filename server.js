@@ -59,7 +59,22 @@ app.get('/api/v1/dbRecords', (req, res) => {
     }
 
     res.send(foundRecords);
-  })
-})
+  });
+});
+
+app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
+  db.AirQuality.findOne({ ReportingArea: "San Francisco"}, (err, foundRecords) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    res.send(foundRecords);
+  });
+});
+
+// Show main page no matter what
+app.use('*', (req, res) => {
+  res.render('index.html');
+});
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));
