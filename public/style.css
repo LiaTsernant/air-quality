@@ -58,26 +58,26 @@ h2 {
 
 #circle {
   position: fixed;
-  width: 530px;
-  height: 530px;
-  border-radius: 41%;
+  width: 510px;
+  height: 490px;
+  border-radius: 42%;
   animation: rotate 20s infinite linear;
   z-index: 2;
 }
 
 #circle2 {
   position: fixed;
-  width: 530px;
+  width: 430px;
   height: 530px;
-  border-radius: 45%;
+  border-radius: 48%;
   animation: rotate-back 25s infinite linear;
   z-index: 2;
 }
 
 #circle3 {
   position: fixed;
-  width: 530px;
-  height: 530px;
+  width: 525px;
+  height: 460px;
   border-radius: 50%;
   animation: rotate 30s infinite linear;
   z-index: 2;
@@ -85,8 +85,8 @@ h2 {
 
 #circle4 {
   position: fixed;
-  width: 530px;
-  height: 530px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   z-index: 2;
 }
@@ -171,7 +171,7 @@ h2 {
 
   #circle-container {
     height: 290px;
-    width: 290px;
+    width: 20px;
   }
 
   #circle,
