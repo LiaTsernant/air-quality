@@ -81,6 +81,7 @@ function setStatus(particulateMatter) {
   let status = document.getElementById('status');
   status.textContent = statusData;
   setColorPalette(colorPalette);
+
 }
 
 function setColorPalette(palette) {

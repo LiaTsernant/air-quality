@@ -8,7 +8,6 @@ html, body {
   width:100%;
   height:100%;
   font-family: 'Montserrat', sans-serif;
-  /* background-color: rgba(179, 246, 184, 0.198); */
 }
 
 body, 
@@ -45,12 +44,7 @@ h2 {
 
 #area {
   font-size: 80px;
-  color: rgb(5, 144, 51);
-}
-
-#air-details {
-  flex-direction: row;
-  z-index: 2;
+  margin: 20px 0;
 }
 
 #circle-container {
@@ -64,19 +58,17 @@ h2 {
 
 #circle {
   position: fixed;
-  width: 510px;
-  height: 490px;
-  /* background-color: rgba(127, 255, 212, 0.8); */
-  border-radius: 40%;
+  width: 530px;
+  height: 530px;
+  border-radius: 41%;
   animation: rotate 20s infinite linear;
   z-index: 2;
 }
 
 #circle2 {
   position: fixed;
-  width: 430px;
+  width: 530px;
   height: 530px;
-  /* background-color: rgba(47, 221, 163, 0.7); */
   border-radius: 45%;
   animation: rotate-back 25s infinite linear;
   z-index: 2;
@@ -84,9 +76,8 @@ h2 {
 
 #circle3 {
   position: fixed;
-  width: 525px;
-  height: 460px;
-  /* background-color: rgba(16, 236, 163, 1); */
+  width: 530px;
+  height: 530px;
   border-radius: 50%;
   animation: rotate 30s infinite linear;
   z-index: 2;
@@ -94,10 +85,8 @@ h2 {
 
 #circle4 {
   position: fixed;
-  width: 480px;
-  height: 480px;
-  /* background-color: rgba(14, 185, 128, 0.5); */
-  /* background-color: white; */
+  width: 530px;
+  height: 530px;
   border-radius: 50%;
   z-index: 2;
 }
@@ -115,5 +104,113 @@ h2 {
 @keyframes rotate-back {
   from{
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  body {
+    flex-direction: column;
+  }
+
+  #area {
+    font-size: 30px;
+  }
+
+  #status {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  #circle-container {
+    height: 260px;
+    width: 100%
+  }
+
+  #circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  #circle2 {
+    width: 250px;
+    height: 250px;
+    
+  }
+
+  #circle3 {
+    width: 250px;
+    height: 250px;
+    
+  }
+
+  #circle4 {
+    width: 250px;
+    height: 250px;
+    
+  }
+}
+@media only screen and (min-width: 621px) and (max-width: 800px){
+  body {
+    flex-direction: row;
+  }
+
+  #area {
+    font-size: 30px;
+  }
+
+  #status {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  #circle-container {
+    height: 290px;
+    width: 290px;
+  }
+
+  #circle,
+  #circle2,
+  #circle3,
+  #circle4 {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1200px) {
+  body {
+    flex-direction: row;
+  }
+
+  #area {
+    font-size: 40px;
+  }
+
+  #status {
+    font-size: 55px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  #circle-container {
+    height: 360px;
+    width: 360px;
+  }
+
+  #circle,
+  #circle2,
+  #circle3,
+  #circle4 {
+    width: 350px;
+    height: 350px;
+
   }
 }
