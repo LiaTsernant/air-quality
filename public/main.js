@@ -80,6 +80,8 @@ function setStatus(particulateMatter) {
 
   let status = document.getElementById('status');
   status.textContent = statusData;
+  status.textContent = "hazardous";
+
   setColorPalette(colorPalette);
 
 }
