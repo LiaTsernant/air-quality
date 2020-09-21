@@ -169,8 +169,13 @@ p {
     top: 0;
   }
 
+  #details-container {
+    margin-top: 0;
+  }
+
   #area {
     font-size: 30px;
+    margin-top: 0;
   }
 
   #status {
@@ -179,6 +184,7 @@ p {
 
   h2 {
     font-size: 20px;
+    margin: 10px;
   }
 
   #circle-container {
@@ -255,6 +261,7 @@ p {
 
   h2 {
     font-size: 20px;
+    margin: 10px;
   }
 
   #circle-container {
@@ -313,6 +320,7 @@ p {
 
   h2 {
     font-size: 25px;
+    margin: 15px;
   }
 
   #circle-container {
