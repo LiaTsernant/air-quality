@@ -21,7 +21,6 @@ app.get('/api/v1/update', (req, res) => {
     let dataStr = "";
     let newDBRecord = {};
 
-
     resp.on('data', d => {
       dataStr += d;
     });
