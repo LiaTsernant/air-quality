@@ -67,12 +67,12 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
     if (err) {
       return console.log(err);
     }
-
+    
     res.send(foundRecords);
   });
 });
 
-// Show main page no matter what
+// Show main page
 app.use('/', (req, res) => {
   res.sendFile('public/views/index.html', {
     root: __dirname
