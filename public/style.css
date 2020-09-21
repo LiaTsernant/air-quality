@@ -24,10 +24,10 @@ body {
   flex-direction: row;
 }
 
-canvas {
-  width: 100%; 
+#particles-js {
+  width: 90%; 
   height: 100%; 
-  position: fixed; 
+  position: fixed;
 }
 
 #status {
@@ -112,6 +112,12 @@ h2 {
     flex-direction: column;
   }
 
+  #particles-js {
+    width: 100%; 
+    height: 60%; 
+    top: 0;
+  }
+
   #area {
     font-size: 30px;
   }
@@ -132,13 +138,11 @@ h2 {
   #circle {
     width: 270px;
     height: 230px;
-    /* background-color: rgb(221, 180, 47); */
   }
 
   #circle2 {
     width: 265px;
     height: 200px;
-    
   }
 
   #circle3 {
@@ -155,6 +159,11 @@ h2 {
 @media only screen and (min-width: 621px) and (max-width: 800px){
   body {
     flex-direction: row;
+  }
+
+  #particles-js {
+    width: 100%; 
+    height: 100%; 
   }
 
   #area {
