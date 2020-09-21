@@ -196,7 +196,7 @@ p {
   }
 
   #circle-container {
-    height: 300px;
+    height: 270px;
     width: 100%
   }
 
@@ -354,5 +354,11 @@ p {
   #circle4 {
     width: 350px;
     height: 350px;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  body {
+    flex-direction: row;
   }
 }
