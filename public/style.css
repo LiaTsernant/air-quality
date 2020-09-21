@@ -95,6 +95,58 @@ h2 {
   margin: 20px;
 }
 
+#good,
+#moderate,
+#bad,
+#unhealthy,
+#dangerous,
+#hazardous {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+#good div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: rgba(14, 185, 128, 1);
+}
+
+#moderate div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: rgba(236, 196, 16, 1);
+}
+
+#bad div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color:rgba(236, 141, 16, 1);
+}
+
+#unhealthy div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: rgba(236, 16, 16, 1);
+}
+
+#dangerous div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color:rgba(187, 6, 133, 1);
+}
+
+#hazardous div {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: rgba(98, 4, 70, 1);
+}
+
 @keyframes rotate {
   from{
     transform: rotate(-360deg);
