@@ -5,8 +5,8 @@ let GOOD_COLORS = [
   'rgba(14, 185, 128, 0.5)'
 ];
 let MODERATE_COLORS = [
-  'rgba(255, 253, 127, 0.8)',
-  'rgba(221, 218, 47, 0.7)',
+  'rgba(246, 225, 132, 0.8)',
+  'rgba(221, 180, 47, 0,8)',
   'rgba(236, 196, 16, 1)',
   'rgba(185, 182, 14, 0.5)',
 ];
@@ -41,7 +41,6 @@ fetch('/api/v1/southSanFranciscoRecord').
   );
 
 function renderPage(dataObj) {
-  // console.log(dataObj)
   let particulateMatter = document.getElementById('particulate-matter-data');
   particulateMatter.textContent = dataObj.ParticulateMatter;
 
@@ -79,13 +78,10 @@ function setStatus(particulateMatter) {
   }
 
   let status = document.getElementById('status');
-  // status.textContent = statusData;
-  status.textContent = 'hazardous';
+  status.textContent = statusData;
 
 
-  // setColorPalette(colorPalette);
-  setColorPalette(HAZARDOUS_COLORS);
-
+  setColorPalette(colorPalette);
 }
 
 function setColorPalette(palette) {
