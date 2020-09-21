@@ -205,6 +205,20 @@ p {
     width: 250px;
     height: 250px;
   }
+
+  #good div,
+  #moderate div,
+  #bad div,
+  #unhealthy div,
+  #dangerous div,
+  #hazardous div {
+    width: 10px;
+    height: 10px;
+  }
+
+  p {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (min-width: 621px) and (max-width: 800px){
