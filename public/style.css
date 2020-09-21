@@ -42,6 +42,10 @@ h2 {
   margin: 20px;
 }
 
+p {
+  font-size: 15px;
+}
+
 #area {
   font-size: 80px;
   margin: 20px 0;
@@ -103,47 +107,42 @@ h2 {
 #hazardous {
   display: flex;
   margin-bottom: 5px;
+  align-items: center;
+}
+
+#good div,
+#moderate div,
+#bad div,
+#unhealthy div,
+#dangerous div,
+#hazardous div
+ {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
 #good div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color: rgba(14, 185, 128, 1);
 }
 
 #moderate div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color: rgba(236, 196, 16, 1);
 }
 
 #bad div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color:rgba(236, 141, 16, 1);
 }
 
 #unhealthy div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color: rgba(236, 16, 16, 1);
 }
 
 #dangerous div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color:rgba(187, 6, 133, 1);
 }
 
 #hazardous div {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
   background-color: rgba(98, 4, 70, 1);
 }
 
@@ -213,6 +212,20 @@ h2 {
     flex-direction: row;
   }
 
+  #good div,
+  #moderate div,
+  #bad div,
+  #unhealthy div,
+  #dangerous div,
+  #hazardous div {
+    width: 10px;
+    height: 10px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
   #particles-js {
     width: 100%; 
     height: 100%; 
@@ -260,6 +273,21 @@ h2 {
   body {
     flex-direction: row;
   }
+
+  #good div,
+  #moderate div,
+  #bad div,
+  #unhealthy div,
+  #dangerous div,
+  #hazardous div {
+    width: 10px;
+    height: 10px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
 
   #area {
     font-size: 40px;
