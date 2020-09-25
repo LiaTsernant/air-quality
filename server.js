@@ -50,6 +50,40 @@ app.get('/api/v1/update', (req, res) => {
   request.end();
 });
 
+// current observation: http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=94080&distance=25&API_KEY=34D0BBEF-43B8-4945-9718-D212E2D285BE
+
+app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
+  if (req.params.zip_code) {
+    const options = {
+      hostname: 'www.airnowapi.org',
+      path: `/aq/observation/zipCode/current/?format=application/json&zipCode=${req.params.zip_code}&distance=25&API_KEY=${process.env.API_KEY}`,
+      method: 'GET'
+    };
+
+    const request = https.request(options, resp => {
+      let dataStr = "";
+
+      resp.on('data', d => {
+        dataStr += d;
+      });
+
+      //Send status and recult to the frontend part
+      resp.on('end', () => {
+        let dataArr = JSON.parse(dataStr);
+
+        res.status(200).json({ status: 200, record: dataArr })
+      });
+    });
+
+    request.on('error', error => {
+      console.error(error);
+    });
+
+    request.end();
+  }
+
+  res.status(400).json({ status: 400, message: "Zip Code Required" })
+});
 
 app.get('/api/v1/dbRecords', (req, res) => {
   db.AirQuality.find({}, (err, foundRecords) => {
