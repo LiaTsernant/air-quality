@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const https = require('https');
 const db = require('./models');
 require('dotenv').config();
@@ -104,6 +104,10 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
     res.send(foundRecords);
   });
 });
+
+app.get('/api/v1/get_by_city_name/:city_name', (req, res) => {
+  res.send('<h1>By City Name</h1>')
+})
 
 // Show main page
 app.use('/', (req, res) => {
