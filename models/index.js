@@ -12,4 +12,5 @@ mongoose.connect(DB_URI, {
 
 module.exports = {
   AirQuality: require('./AirQualityModel'),
+  CityArea: require('./CityAreaModel'),
 };

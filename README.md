@@ -7,6 +7,7 @@ Designed and implemented an app that allows users to see current air quality in 
 Integrated with AirNow API for displaying most recent data.
 
 ## Tech:
+Deployed Version:
 * AirNow API,
 * MongoDB,
 * Express,
@@ -14,10 +15,20 @@ Integrated with AirNow API for displaying most recent data.
 * HTML / CSS,
 * [Particles.js](https://vincentgarreau.com/particles.js/)
 
+Currently in progress:
+* AirNow API,
+* MongoDB,
+* Express,
+* React
+* Node,
+* HTML / CSS,
+* [Lodash](https://lodash.com/)
+* [Particles.js](https://vincentgarreau.com/particles.js/)
+
+
 ## Decicions made:
 * Create server:
-  * Version1: for being able to store my api key I decided to create a server that proxies the request to the original server.
-  * Version 2: add a cron like task scheduler for grabbing a recent information and storing it to the database.
+  * For being able to store my api key I decided to create a server that proxies the request to the original server. I also added a cron like task scheduler for grabbing the recent information and storing it to the database.
 * Use upsert: instead of iterating over records and see if a record already exists, I decided to use MongoDB upsert. Method will update a record if already exists, otherwise create a new record.
 
 ```javascript

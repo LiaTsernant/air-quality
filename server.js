@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const https = require('https');
 const db = require('./models');
 require('dotenv').config();
@@ -59,14 +59,14 @@ app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
       path: `/aq/observation/zipCode/current/?format=application/json&zipCode=${req.params.zip_code}&distance=25&API_KEY=${process.env.API_KEY}`,
       method: 'GET'
     };
-  
+
     const request = https.request(options, resp => {
       let dataStr = "";
-  
+
       resp.on('data', d => {
         dataStr += d;
       });
-  
+
       //Send status and recult to the frontend part
       resp.on('end', () => {
         let dataArr = JSON.parse(dataStr);
@@ -74,17 +74,16 @@ app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
         res.status(200).json({ status: 200, record: dataArr })
       });
     });
-  
+
     request.on('error', error => {
       console.error(error);
     });
-  
+
     request.end();
   }
 
-  res.status(400).json({status: 400, message: "Zip Code Required"})
+  res.status(400).json({ status: 400, message: "Zip Code Required" })
 });
-
 
 app.get('/api/v1/dbRecords', (req, res) => {
   db.AirQuality.find({}, (err, foundRecords) => {
@@ -105,6 +104,10 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
     res.send(foundRecords);
   });
 });
+
+app.get('/api/v1/get_by_city_name/:city_name', (req, res) => {
+  res.send('<h1>By City Name</h1>')
+})
 
 // Show main page
 app.use('/', (req, res) => {
