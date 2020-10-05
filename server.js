@@ -93,6 +93,7 @@ app.get('/api/v1/dbRecords', (req, res) => {
   });
 });
 
+// Still used by a static version of the app. Don't remove please
 app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
   db.AirQuality.findOne({ ReportingArea: "San Francisco"}, (err, foundRecords) => {
     if (err) {
