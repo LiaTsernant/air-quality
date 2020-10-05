@@ -103,10 +103,6 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
   });
 });
 
-app.get('/api/v1/get_by_city_name/:city_name', (req, res) => {
-  res.send('<h1>By City Name</h1>')
-})
-
 // Show main page
 app.use('/', (req, res) => {
   res.sendFile('public/views/index.html', {
