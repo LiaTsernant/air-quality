@@ -78,6 +78,7 @@ app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
     });
 
     request.end();
+    return;
   }
 
   res.status(400).json({ status: 400, message: "Zip Code Required" })
