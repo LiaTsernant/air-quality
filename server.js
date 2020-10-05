@@ -6,10 +6,13 @@ const https = require('https');
 const db = require('./models');
 require('dotenv').config();
 
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
+// Current setup - only one instance in the data base. Each call updates the instance.
+// Will be removed in the version with an option to search more cities
 app.get('/api/v1/update', (req, res) => {
   const options = {
     hostname: 'www.airnowapi.org',
@@ -50,6 +53,7 @@ app.get('/api/v1/update', (req, res) => {
   request.end();
 });
 
+// The main function for grabbing the data. Frontend will be calling it, when input field validates the input and convert city name to zip code
 app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
   if (req.params.zip_code) {
     const options = {
@@ -83,6 +87,7 @@ app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
   res.status(400).json({ status: 400, message: "Zip Code Required" })
 });
 
+// For degugging porpuses. Just to see what data in the database and how it is stored
 app.get('/api/v1/dbRecords', (req, res) => {
   db.AirQuality.find({}, (err, foundRecords) => {
     if (err) {
@@ -93,6 +98,7 @@ app.get('/api/v1/dbRecords', (req, res) => {
   });
 });
 
+// Still used by a static version of the app. Don't remove please
 app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
   db.AirQuality.findOne({ ReportingArea: "San Francisco"}, (err, foundRecords) => {
     if (err) {
