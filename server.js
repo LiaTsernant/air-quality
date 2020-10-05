@@ -93,6 +93,7 @@ app.get('/api/v1/dbRecords', (req, res) => {
   });
 });
 
+// Still used by a static version of the app. Don't remove please
 app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
   db.AirQuality.findOne({ ReportingArea: "San Francisco"}, (err, foundRecords) => {
     if (err) {
@@ -102,10 +103,6 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
     res.send(foundRecords);
   });
 });
-
-app.get('/api/v1/get_by_city_name/:city_name', (req, res) => {
-  res.send('<h1>By City Name</h1>')
-})
 
 // Show main page
 app.use('/', (req, res) => {
