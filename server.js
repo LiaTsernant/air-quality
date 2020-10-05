@@ -50,8 +50,6 @@ app.get('/api/v1/update', (req, res) => {
   request.end();
 });
 
-// current observation: http://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=94080&distance=25&API_KEY=34D0BBEF-43B8-4945-9718-D212E2D285BE
-
 app.get('/api/v1/get_by_zip_code/:zip_code', (req, res) => {
   if (req.params.zip_code) {
     const options = {
