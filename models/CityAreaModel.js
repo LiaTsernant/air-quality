@@ -8,4 +8,5 @@ const CityAreaSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 CityAreaSchema.index({ city: 'text' });
-module.exports = mongoose.model('CityArea', CityAreaSchema);
+const CityArea= mongoose.model('CityArea', CityAreaSchema);
+module.exports = CityArea;
