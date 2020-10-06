@@ -15,7 +15,6 @@ const server = app.listen(port, () => {
     console.log(`App running on port ${port}`);
 });
 
-//*Prod Database Connection //*
 let DB = process.env.MONGODB_URI;
 mongoose
     .connect(DB, {
