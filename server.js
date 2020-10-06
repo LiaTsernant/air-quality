@@ -51,7 +51,6 @@ process.on('SIGTERM', () => {
     })
 })
 
-
 // // New route to call API using city_name by AldoTu
 // app.get('/api/v1/get_by_city_name/:city_name', (req, res) => {
 
@@ -108,3 +107,45 @@ process.on('SIGTERM', () => {
 //   );
 //   return query;
 // }
+
+
+
+//     request.on('error', error => {
+//       console.error(error);
+//     });
+
+//     request.end();
+//     return;
+//   }
+
+//   res.status(400).json({ status: 400, message: "Zip Code Required" })
+// });
+
+// app.get('/api/v1/dbRecords', (req, res) => {
+//   db.AirQuality.find({}, (err, foundRecords) => {
+//     if (err) {
+//       return console.log(err);
+//     }
+
+//     res.send(foundRecords);
+//   });
+// });
+
+// app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
+//   db.AirQuality.findOne({ ReportingArea: "San Francisco"}, (err, foundRecords) => {
+//     if (err) {
+//       return console.log(err);
+//     }
+    
+//     res.send(foundRecords);
+//   });
+// });
+
+// // Show main page
+// app.use('/', (req, res) => {
+//   res.sendFile('public/views/index.html', {
+//     root: __dirname
+//   });
+// });
+
+// app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));
