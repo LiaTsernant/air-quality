@@ -1,4 +1,4 @@
-const db = require('./models');
+const CityArea = require('./models/CityAreaModel');
 let data = [
   {
     "zip": "601",
@@ -62142,13 +62142,13 @@ let data = [
   }
 ]
 
-db.CityArea.deleteMany({}, (err, deleted) => {
+CityArea.deleteMany({}, (err, deleted) => {
   if (err) {
     return console.log(err);
   }
   console.log('Deleted!');
 
-  db.CityArea.create(data, (err, result) => {
+  CityArea.create(data, (err, result) => {
     if (err) {
       return console.log(err);
     }

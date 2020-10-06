@@ -6,4 +6,5 @@ const AirQualitySchema = new mongoose.Schema({
   Ozone: Number,
 }, { timestamps: true });
 
-module.exports = mongoose.model('AirQuality', AirQualitySchema);
+const AirQuality= mongoose.model('AirQuality', AirQualitySchema);
+module.exports = AirQuality
