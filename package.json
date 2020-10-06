@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node server.js",
-    "import-data":"node zip_codes"
+    "start": "node server.js",
+    "import-data": "node zip_codes"
   },
   "author": "",
   "license": "ISC",

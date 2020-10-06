@@ -1,21 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const airController=require('../controllers/airController');
+const airController = require('../controllers/airController');
 const { route } = require('./viewRouter');
 
 router
-    .route('/get_by_zip_code/:zip_code')
-    .get(airController.getAirQualityDataByZipCode)
+  .route('/getAirQualityDataByZipCode/:zipCode')
+  .get(airController.getAirQualityDataByZipCode)
 
 router
-    .route('/update')
-    .get(airController.updateData)
+  .route('/getAirQualityDataByCityName/:cityName')
+  .get(airController.getAirQualityDataByCityName)
 
 router
-    .route('/api/v1/dbRecords')
-    .get(airController.getDataFromDb)
+  .route('/update')
+  .get(airController.updateData)
+
 router
-    .route('/api/v1/southSanFranciscoRecord')
-    .get(airController.getSouthSanFranciscoRecord)
+  .route('/api/v1/dbRecords')
+  .get(airController.getDataFromDb)
+router
+  .route('/api/v1/southSanFranciscoRecord')
+  .get(airController.getSouthSanFranciscoRecord)
 
 module.exports = router;
