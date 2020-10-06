@@ -109,6 +109,29 @@ app.get('/api/v1/southSanFranciscoRecord', (req, res) => {
   });
 });
 
+app.get('/api/v1/cityToZipConvert',async (req,res)=>{
+  try {
+    // $caseSensitive is working becaue city is an index fiels
+    const result=await db.CityArea.findOne({
+      $text:
+        {
+          $search: req.query['city'],
+          $caseSensitive: false,
+        }
+    },{zip:1})
+    res.status(200).json({
+      status:'Sucess',
+      result
+    });
+  } catch (error) {
+    console.log('error {}',error);
+    res.status(400).json({
+      status: 'Failed'
+  });
+  }
+})
+
+
 // Show main page
 app.use('/', (req, res) => {
   res.sendFile('public/views/index.html', {
@@ -117,3 +140,4 @@ app.use('/', (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/`));
+
