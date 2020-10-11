@@ -58,7 +58,6 @@ exports.getAirQualityDataByCityName = async (req, res, next) => {
         //Send status and recult to the frontend part
         resp.on('end', () => {
           let dataArr = JSON.parse(dataStr);
-
           res.status(200).json({ status: 200, record: dataArr })
         });
       });
